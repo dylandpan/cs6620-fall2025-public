@@ -1,0 +1,26 @@
+# Version control
+.git
+.github
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Documentation
+README.md
+
+# OS files
+.DS_Store
+Thumbs.db
