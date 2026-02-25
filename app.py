@@ -5,6 +5,7 @@ import os
 import re
 import csv
 from io import StringIO
+from datetime import datetime
 from flask import Flask, render_template, request, jsonify, send_from_directory, send_file
 from flask_cors import CORS
 from pydub import AudioSegment
@@ -161,7 +162,7 @@ def serve_audio_segment():
         app.logger.error(f"Error extracting audio segment: {e}")
         return f"Error extracting audio segment: {str(e)}", 500
 
-@app.route('/')
+@app.route('/player')
 def index():
     """
     Renders the main HTML page for the client-side audio player.
@@ -427,7 +428,7 @@ def save_label():
             'start_time': round(data['start_time'], 3),
             'end_time': round(data['end_time'], 3),
             'duration': round(data['end_time'] - data['start_time'], 3),
-            'labeled_at': __import__('datetime').datetime.now().isoformat()
+            'labeled_at': datetime.now().isoformat()
         }
         
         # Save to CSV file
