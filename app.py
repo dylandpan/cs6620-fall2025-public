@@ -1,5 +1,5 @@
-# Version: 1.0.1
-# Built with GitHub Actions
+# Version: 2.0
+# Built with GitHub Actions and deployed to EC2
 
 import os
 import re
